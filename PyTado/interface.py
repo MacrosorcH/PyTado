@@ -363,8 +363,8 @@ class Tado:
             if not capabilities:
                 raise Exception('Could\'t fetch zone details')
 
-            if mode not in capabilities:
-                raise Exception('Unsupported mode for this zone')
+            #if mode not in capabilities:
+                #raise Exception('Unsupported mode for this zone')
 
             mode_capabilities = capabilities[mode]
 
