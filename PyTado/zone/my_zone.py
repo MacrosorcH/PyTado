@@ -104,7 +104,8 @@ class TadoZone:
         if "setting" in data:
             # temperature setting will not exist when device is off
             if "temperature" in data["setting"] and data["setting"]["temperature"] is not None:
-                kwargs["target_temp"] = float(data["setting"]["temperature"]["celsius"])
+                # Round off target temperature to nearest 0.5
+                kwargs["target_temp"] = round(float(data["setting"]["temperature"]["celsius"]) * 2) / 2
 
             setting = data["setting"]
 
